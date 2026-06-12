@@ -1,0 +1,52 @@
+# Smithery.ai configuration for IRONCLAW BTC Node MCP Server
+# https://smithery.ai/server/cariohca/btc-node
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      BTC_RPC_HOST:
+        type: string
+        default: "10.0.0.99"
+        description: "Bitcoin Core RPC host"
+      BTC_RPC_PORT:
+        type: string
+        default: "8332"
+        description: "Bitcoin Core RPC port"
+      BTC_RPC_USER:
+        type: string
+        default: "bitcoinrpc"
+        description: "Bitcoin Core RPC username"
+      BTC_RPC_PASS:
+        type: string
+        default: ""
+        description: "Bitcoin Core RPC password"
+      LND_DIR:
+        type: string
+        default: ""
+        description: "Path to LND directory (optional)"
+      WALLET:
+        type: string
+        default: "0x6a667a72d3d36d95421474019aa46f0308d643fc"
+        description: "USDC wallet address for x402 payments"
+    required: []
+  commandFunction:
+    type: ssh
+    shell: |
+      #!/bin/bash
+      set -e
+      
+      cd /home/user/x402-btc-node
+      npm install
+      
+      # Write .env from config
+      cat > .env << EOF
+      BTC_RPC_HOST=${BTC_RPC_HOST:-10.0.0.99}
+      BTC_RPC_PORT=${BTC_RPC_PORT:-8332}
+      BTC_RPC_USER=${BTC_RPC_USER:-bitcoinrpc}
+      BTC_RPC_PASS=${BTC_RPC_PASS}
+      WALLET=${WALLET:-0x6a667a72d3d36d95421474019aa46f0308d643fc}
+      EOF
+      
+      exec node mcp-server.mjs

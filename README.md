@@ -1,10 +1,26 @@
-# IRONCLAW Bitcoin Blockchain MCP Server
+<div align="center">
+  <h1>🥩 IRONCLAW BTC Node</h1>
+  <p><strong>Bitcoin Blockchain Data — 17 MCP Tools for AI Agents</strong></p>
+  <p>Real full node data via x402 micropayments in USDC on Base mainnet.</p>
+  <p><strong>3 free tools · 14 paid at $0.001 each · No API keys · No subscriptions</strong></p>
 
-Real Bitcoin full node data for AI agents via MCP (Model Context Protocol).
+  <p>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
+    <a href="https://btcnode.uk"><img src="https://img.shields.io/badge/Status-Live-brightgreen" alt="Live"></a>
+    <a href="https://glama.ai/mcp/servers/cariohca-ux/x402-btc-node"><img src="https://img.shields.io/badge/Glama-Listed-blue" alt="Glama"></a>
+    <a href="https://mcp.so/server/ironclaw-btc-node"><img src="https://img.shields.io/badge/mcp.so-Listed-blue" alt="mcp.so"></a>
+    <img src="https://img.shields.io/badge/Bitcoin-F7931A?logo=bitcoin&logoColor=white" alt="Bitcoin">
+    <img src="https://img.shields.io/badge/MCP-Server-blue" alt="MCP Server">
+    <img src="https://img.shields.io/badge/x402-Enabled-8A2BE2" alt="x402">
+    <img src="https://img.shields.io/badge/USDC-Base-0052FF" alt="USDC Base">
+  </p>
+</div>
 
-**17 tools — zero install, pay-per-call in USDC on Base mainnet.**
+---
 
-## Quick Start
+## 🔥 Quick Start
+
+Add to your `claude_desktop_config.json` or any MCP client:
 
 ```json
 {
@@ -17,14 +33,32 @@ Real Bitcoin full node data for AI agents via MCP (Model Context Protocol).
 }
 ```
 
-## Tools
+**That's it.** No install. No API keys. No setup. Free tools work immediately.
+
+---
+
+## 🆓 Free Tools (No Payment Required)
 
 | Tool | Description | Cost |
 |------|-------------|------|
-| `btc_info` | Blockchain info (height, difficulty) | FREE |
-| `btc_fees` | Fee rate estimates | FREE |
-| `btc_mempool` | Mempool status | FREE |
-| `btc_tx` | Transaction lookup | $0.001 |
+| `btc_info` | Blockchain info (block height, difficulty, peers) | **FREE** |
+| `btc_fees` | Fee rate estimates (high/medium/low sat/vB) | **FREE** |
+| `btc_mempool` | Mempool status (pending tx, size MB) | **FREE** |
+
+```bash
+# Try them right now — no payment, no API key
+curl https://btcnode.uk/api/info
+curl https://btcnode.uk/api/fees
+curl https://btcnode.uk/api/mempool
+```
+
+---
+
+## 💰 Paid Tools ($0.001 each via x402)
+
+| Tool | Description | Cost |
+|------|-------------|------|
+| `btc_tx` | Transaction lookup by hash | $0.001 |
 | `btc_addr` | Address portfolio (balance, UTXOs, history) | $0.001 |
 | `btc_trace` | Transaction flow tracing (2 hops) | $0.001 |
 | `btc_fees_predict` | Fee rate prediction | $0.001 |
@@ -39,25 +73,33 @@ Real Bitcoin full node data for AI agents via MCP (Model Context Protocol).
 | `reddit_search` | Search Reddit by keyword | $0.001 |
 | `reddit_trending` | Trending topics on Reddit | $0.001 |
 
-## Requirements
+Paid tools use **x402 protocol** — pay $0.001 USDC per call on **Base mainnet**. Your wallet approves the payment directly in the MCP client.
 
-- Node.js 18+
-- A wallet with USDC on Base mainnet (for paid tools)
-- Free tools require no wallet
+---
 
-## Architecture
+## 🏗 Architecture
 
 ```
-MCP Client (Claude Desktop, etc.)
+MCP Client (Claude Desktop, Cursor, etc.)
         │
         ▼  SSE (mcp.btcnode.uk/sse)
-Bitcoin Full Node + LND
-        │
-        ▼  x402 Protocol (USDC micropayments)
-HTTP API (btcnode.uk)
+   ┌──────────────┐
+   │  MCP Server   │  17 tools, x402 payment middleware
+   └──────┬───────┘
+          │  HTTP API
+   ┌──────┴───────┐
+   │  BTC API      │  REST endpoints, paywall enforcement
+   └──────┬───────┘
+          │  RPC
+   ┌──────┴───────┐
+   │  Bitcoin Core │  Full node (953K+ blocks, 10 peers)
+   │  LND          │  Lightning Network (12K sats)
+   └──────────────┘
 ```
 
-## Deployment
+---
+
+## 🚀 Self-Hosted Deployment
 
 ```bash
 git clone https://github.com/cariohca-ux/x402-btc-node.git
@@ -68,9 +110,21 @@ cp .env.example .env
 node mcp-server.mjs
 ```
 
-## Links
+Requirements: Node.js 18+, a synced Bitcoin Core node (or use the hosted endpoint at `btcnode.uk`).
 
-- **SSE Endpoint:** https://mcp.btcnode.uk/sse
-- **API:** https://btcnode.uk
-- **Status:** https://btcnode.uk/health
-- **MCP Registry:** https://registry.modelcontextprotocol.io
+---
+
+## 📋 Listings
+
+| Platform | Status | URL |
+|----------|--------|-----|
+| **Glama** | ✅ Live | [glama.ai/mcp/servers/cariohca-ux/x402-btc-node](https://glama.ai/mcp/servers/cariohca-ux/x402-btc-node) |
+| **mcp.so** | ✅ Live | [mcp.so/server/ironclaw-btc-node](https://mcp.so/server/ironclaw-btc-node) |
+| **PayAPI Market** | ✅ Live | [payapi.market](https://payapi.market) |
+| **MCP Registry** | 🔄 Auto-published via PayAPI | [registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io) |
+
+---
+
+## 📄 License
+
+MIT — do what you want. Built by [cariohca-ux](https://github.com/cariohca-ux). Bitcoin data served from a real full node.

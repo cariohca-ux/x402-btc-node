@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IRONCLAW BTC Node — Bitcoin Blockchain Data for AI Agents</title>
+<meta name="description" content="Free Bitcoin blockchain data API for AI agents. 17 MCP tools — fees, mempool, transactions, whales, SEC insider trades. x402 pay-per-call in USDC on Base.">
+<meta name="keywords" content="free bitcoin api, bitcoin blockchain api, mcp bitcoin server, free bitcoin node data, btc fees api, btc mempool api, bitcoin for ai agents, bitcoin mcp, x402 bitcoin, usdc bitcoin api, bitcoin, bitcoin node, bitcoin api, mcp, model context protocol, x402, blockchain, cryptocurrency, ai agents, free bitcoin data, btc fees, btc mempool, btc info">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:800px;margin:40px auto;padding:20px;line-height:1.6;color:#333}
+h1{color:#f7931a}
+h2{color:#555;border-bottom:1px solid #eee;padding-bottom:8px}
+.free{background:#e6f7e6;padding:2px 8px;border-radius:4px;font-size:12px;color:#2e7d32;font-weight:bold}
+.paid{background:#fff3e0;padding:2px 8px;border-radius:4px;font-size:12px;color:#e65100}
+ul{list-style:none;padding:0}
+li{padding:6px 0}
+code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-size:14px}
+.cta{background:#f7931a;color:white;padding:12px 24px;border-radius:8px;display:inline-block;text-decoration:none;font-weight:bold;margin-top:20px}
+.cta:hover{background:#e67e22}
+.endpoint{font-family:monospace;background:#f9f9f9;padding:8px 12px;border-radius:4px;margin:8px 0}
+</style>
+</head>
+<body>
+<h1>🥩 IRONCLAW BTC Node</h1>
+<p><strong>Real Bitcoin full node data for AI agents.</strong> 17 MCP tools — zero install, pay-per-call in USDC on Base mainnet. <strong class="free">3 FREE tools</strong> to start.</p>
+
+<div class="endpoint">
+  🆓 <code>GET /api/info</code> — Bitcoin blockchain info (block height, difficulty, peers)<br>
+  🆓 <code>GET /api/fees</code> — Fee rate estimates (high/medium/low sat/vB)<br>
+  🆓 <code>GET /api/mempool</code> — Mempool status (pending tx, size MB)<br>
+  💰 <code>GET /api/tx/:hash</code> — Transaction lookup — <strong>$0.001</strong><br>
+  💰 <code>GET /api/addr/:address</code> — Address portfolio — <strong>$0.001</strong><br>
+  💰 And 12 more tools...
+</div>
+
+<a class="cta" href="https://glama.ai/mcp/servers/cariohca-ux/x402-btc-node" target="_blank">Try on Glama →</a>
+<a class="cta" style="background:#333" href="https://github.com/cariohca-ux/x402-btc-node" target="_blank">GitHub →</a>
+
+<h2>Quick Start (MCP)</h2>
+<pre><code>{
+  "mcpServers": {
+    "btc-node": {
+      "type": "sse",
+      "url": "https://mcp.btcnode.uk/sse"
+    }
+  }
+}</code></pre>
+
+<h2>Free Tools</h2>
+<ul>
+  <li><strong class="free">FREE</strong> <code>btc_info</code> — Blockchain info</li>
+  <li><strong class="free">FREE</strong> <code>btc_fees</code> — Fee estimates</li>
+  <li><strong class="free">FREE</strong> <code>btc_mempool</code> — Mempool status</li>
+</ul>
+
+<h2>Paid Tools ($0.001 each)</h2>
+<ul>
+  <li><strong class="paid">$0.001</strong> <code>btc_tx</code> — Transaction lookup</li>
+  <li><strong class="paid">$0.001</strong> <code>btc_addr</code> — Address portfolio</li>
+  <li><strong class="paid">$0.001</strong> <code>btc_trace</code> — Transaction tracing</li>
+  <li><strong class="paid">$0.001</strong> <code>btc_whales</code> — Whale alerts</li>
+  <li><strong class="paid">$0.001</strong> <code>sec_insider</code> — SEC insider trades</li>
+  <li><strong class="paid">$0.001</strong> <code>web_scrape</code> — URL scraping</li>
+  <li><strong class="paid">$0.001</strong> <code>ai_summarize</code> — AI summarization</li>
+  <li><strong class="paid">$0.001</strong> <code>game_theory</code> — Game theory analysis</li>
+  <li><strong class="paid">$0.001</strong> <code>reddit_hot</code> — Reddit hot posts</li>
+  <li>And 4 more...</li>
+</ul>
+
+<h2>Direct API Access (No MCP Needed)</h2>
+<pre><code># Try it right now — no API key, no payment
+curl https://btcnode.uk/api/info
+
+curl https://btcnode.uk/api/fees
+
+curl https://btcnode.uk/api/mempool</code></pre>
+
+<h2>Indexed On</h2>
+<p>
+  <<a href="https://pulsemcp.com">PulseMCP</a> ·
+  <a href="https://glama.ai/mcp/servers/cariohca-ux/x402-btc-node">Glama</a> ·
+  <a href="https://mcp.so/server/ironclaw-btc-node">mcp.so</a> ·
+  <a href="https://www.payapi.market/">PayAPI Market</a> ·
+  <a href="https://github.com/modelcontextprotocol/registry">MCP Registry</a> ·
+  <a href="https://x402scan.xyz">x402scan</a>
+</p>
+
+<p style="margin-top:40px;color:#999;font-size:12px">
+  Built by <a href="https://github.com/cariohca-ux">cariohca-ux</a> · 
+  Bitcoin blockchain data served from a real full node · 
+  x402 micropayments via USDC on Base mainnet
+</p>
+</body>
+</html>
