@@ -12,6 +12,7 @@
     <img src="https://img.shields.io/badge/Bitcoin-F7931A?logo=bitcoin&logoColor=white" alt="Bitcoin">
     <img src="https://img.shields.io/badge/MCP-Server-blue" alt="MCP Server">
     <img src="https://img.shields.io/badge/x402-Enabled-8A2BE2" alt="x402">
+    <img src="https://glama.ai/mcp/servers/cariohca-ux/x402-btc-node/badges/card.svg" alt="Glama Card" style="max-width:250px">
     <img src="https://img.shields.io/badge/USDC-Base-0052FF" alt="USDC Base">
   </p>
 </div>
