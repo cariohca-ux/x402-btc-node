@@ -26,5 +26,23 @@
     "playwright": "^1.60.0",
     "x402-express": "^1.2.0",
     "zod": "^3.25.76"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "mcpName": "cariohca-ux/x402-btc-node",
+  "keywords": ["bitcoin", "crypto", "blockchain", "mcp", "mcp-server", "x402", "micropayments", "usdc", "ai-agents", "bitcoin-node", "api"],
+  "homepage": "https://btcnode.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cariohca-ux/x402-btc-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cariohca-ux/x402-btc-node/issues"
+  },
+  "license": "MIT",
+  "author": "cariohca-ux",
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
